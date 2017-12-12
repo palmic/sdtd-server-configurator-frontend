@@ -13,7 +13,8 @@
     "aurelia-files": "github:grofit/aurelia-files",
     "bluebird": "^3.4.1",
     "requirejs": "^2.3.2",
-    "text": "github:requirejs/text#latest"
+    "text": "github:requirejs/text#latest",
+    "xmldom": "^0.1.27"
   },
   "peerDependencies": {},
   "devDependencies": {

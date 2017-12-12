@@ -83,7 +83,16 @@
           {
             "name": "aurelia-files",
             "path": "../node_modules/aurelia-files/dist/amd",
-            "main": "index"
+            "main": "index",
+            "resources": [
+              "attributes/files-attribute.js"
+            ]
+          },
+          {
+            "name": "xmldom",
+            "main": "./dom-parser",
+            "path": "../node_modules/xmldom",
+            "resources": []
           }
         ]
       }
