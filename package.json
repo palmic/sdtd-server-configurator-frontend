@@ -14,7 +14,7 @@
     "aurelia-materialize-bridge": "^0.31.0",
     "aurelia-validation": "^1.1.2",
     "bluebird": "^3.4.1",
-    "materialize-css": "^0.100.2",
+    "materialize-css": "0.100.1",
     "requirejs": "^2.3.2",
     "text": "github:requirejs/text#latest",
     "xmldom": "^0.1.27"
