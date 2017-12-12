@@ -79,7 +79,12 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
-          "text"
+          "text",
+          {
+            "name": "aurelia-files",
+            "path": "../node_modules/aurelia-files/dist/amd",
+            "main": "index"
+          }
         ]
       }
     ],

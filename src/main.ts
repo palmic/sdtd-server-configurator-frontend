@@ -6,6 +6,8 @@ export function configure(aurelia: Aurelia) {
     .standardConfiguration()
     .feature('resources');
 
+  aurelia.use.plugin("aurelia-files");
+
   if (environment.debug) {
     aurelia.use.developmentLogging();
   }
