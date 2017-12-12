@@ -93,6 +93,36 @@
             "main": "./dom-parser",
             "path": "../node_modules/xmldom",
             "resources": []
+          },
+          "jquery",
+          {
+            "name": "materialize-css",
+            "path": "../node_modules/materialize-css/dist",
+            "main": "js/materialize.amd",
+            "deps": [
+              "jquery"
+            ],
+            "resources": [
+              "css/materialize.css"
+            ],
+            "exports": "Materialize"
+          },
+          {
+            "name": "aurelia-materialize-bridge",
+            "path": "../node_modules/aurelia-materialize-bridge/dist/amd",
+            "main": "index",
+            "deps": [
+              "jquery"
+            ],
+            "resources": [
+              "**/*.{css,html}",
+              "index.js"
+            ]
+          },
+          {
+            "name": "aurelia-validation",
+            "path": "../node_modules/aurelia-validation/dist/amd",
+            "main": "aurelia-validation"
           }
         ]
       }
@@ -108,7 +138,7 @@
             ".html",
             ".css"
           ],
-          "stub": true
+          "stub": false
         }
       ]
     }
