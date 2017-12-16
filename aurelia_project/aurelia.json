@@ -65,8 +65,9 @@
           "aurelia-templating-binding",
           {
             "name": "aurelia-templating-resources",
+            "main": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
-            "main": "aurelia-templating-resources"
+            "resources": []
           },
           {
             "name": "aurelia-templating-router",
@@ -95,6 +96,7 @@
             "resources": []
           },
           "jquery",
+          "lodash",
           {
             "name": "materialize-css",
             "path": "../node_modules/materialize-css/dist",
@@ -123,6 +125,20 @@
             "name": "aurelia-validation",
             "path": "../node_modules/aurelia-validation/dist/amd",
             "main": "aurelia-validation"
+          },
+          {
+            "name": "nprogress",
+            "path": "../node_modules/nprogress",
+            "main": "nprogress",
+            "resources": [
+              "nprogress.css"
+            ]
+          },
+          {
+            "name": "file-saver",
+            "path": "../node_modules/file-saver",
+            "main": "FileSaver",
+            "resources": []
           }
         ]
       }

@@ -1,7 +1,6 @@
 <template>
-  <form>
-		<input type="file" id="some-file-element" accept=".xml" files="on-loaded.bind: fileLoaded; on-progress.bind: loadingInProgress; on-error.bind: loadError" />
-		<div class="error">${error}</div>
-		<textarea cols="220" rows="10" value.bind="content"></textarea>
-  </form>
+	<loading-indicator loading.bind="router.isNavigating || view.rendering || view.formSubmitting || view.exporting"></loading-indicator>
+	<div class="container">
+		<router-view></router-view>
+	</div>
 </template>

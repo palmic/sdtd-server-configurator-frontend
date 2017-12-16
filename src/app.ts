@@ -1,31 +1,23 @@
-import {DOMParser, XMLSerializer} from 'xmldom';
+import {Router, RouterConfiguration} from 'aurelia-router';
 
 export class App {
 
-	public error = "";
+	public router: Router;
 
-	public content = "";
+	public originalDoc: Document;
 
-	public doc :Document;
+	public doc: Document;
 
-	fileLoaded = (file, data) => {
-		this.error = "";
-		let reader = new FileReader();
-		reader.readAsText(file);
-		reader.onloadend = () => {
-			this.doc = new DOMParser().parseFromString(reader.result);
-			this.content = (new XMLSerializer()).serializeToString(this.doc);
-		};
-	};
+	public view;
 
-	loadingInProgress = (file, data) => {
+	configureRouter(config: RouterConfiguration, router: Router) {
+		config.title = '7 Days To Die server XML configs editor';
+		config.map([
+			{route: '', moduleId: 'open-file', title: 'Open File'},
+			{route: 'blocks.xml', moduleId: 'blocks', name: 'blocks'}
+		]);
 
-	};
-
-	loadError = (file, data) => {
-		this.content = "";
-		this.doc = null;
-		this.error = data;
+		this.router = router;
 	}
 
 }

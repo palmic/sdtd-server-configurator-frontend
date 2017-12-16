@@ -1,0 +1,63 @@
+<template>
+    <div class="section properties col s12 teal darken-1 z-depth-3">
+        <div class="attributes col s12">
+            <div class="heading">
+                <h3>Properties</h3>
+				<abbr title="Add new property">
+                    <a class="btn-floating btn right blue darken-2 btn-add"
+                       click.delegate="toggleAddingBlockProperty(block)"><i
+                            class="material-icons">add</i></a>
+                </abbr>
+            </div>
+            <div class="forms col s12 teal darken-2" if.bind="block.addingProperty">
+                <form class="add" submit.delegate="addProperty(block)">
+								<span repeat.for="attribute of block.propertyAdding">
+									<span class="input-field col s6">
+										<input type="text" class="${attribute.error ? 'invalid' : 'valid'}"
+                                               placeholder="${attribute.name}"
+                                               id="${attribute.name}" value.bind="attribute.value"
+                                               required.bind="attribute.required">
+										<label class="active teal-text text-lighten-5 col s6" for="${attribute.name}"
+                                               data-error="${attribute.error}">${attribute.name}</label>
+									</span>
+								</span>
+                    <button class="btn btn-small right waves-effect waves-light" type="submit" name="action">add
+                        <i class="material-icons right">add</i>
+                    </button>
+                </form>
+            </div>
+            <div class="spec teal col s12 darken-2" repeat.for="property of block.data.properties">
+                <div class="info teal darken-3">
+					<span class="controls">
+						<a class="btn btn-small red darken-2 btn-delete"
+                           click.delegate="deleteProperty(property, block)"><i
+                                class="material-icons delete">delete</i></a>
+						<a class="btn btn-small yellow darken-2 btn-edit" click.delegate="toggleEdit(property)"><i
+                                class="material-icons edit">edit</i></a>
+					</span>
+                    <span repeat.for="attribute of property.data">
+						<span if.bind="isPropertyAttributeNameToShow(attribute.name)">
+							<span class="teal darken-4">${attribute.name}:</span>
+							<span>${attribute.value}</span>
+						</span>
+					</span>
+                </div>
+                <div class="forms col s12 teal darken-2" if.bind="property.edit">
+                    <form class="edit" submit.delegate="updateProperty(property, block)">
+								<span repeat.for="attribute of property.data">
+									<span class="input-field col s6"
+                                          if.bind="isPropertyAttributeNameToEdit(attribute.name)">
+										<input type="text" id="${attribute.name}" value.bind="attribute.valueEdit"
+                                               required.bind="attribute.required">
+										<label class="active teal-text text-lighten-5" for="${attribute.name}">${attribute.name}</label>
+									</span>
+								</span>
+                        <button class="btn btn-small right waves-effect waves-light" type="submit" name="action">save
+                            <i class="material-icons right">save</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
